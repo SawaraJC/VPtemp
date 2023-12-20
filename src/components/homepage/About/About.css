@@ -1,0 +1,44 @@
+.main-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Apply gradient and other necessary styles */
+    background-image: linear-gradient(to right, #b74b9b, white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 25px;
+  }
+
+ /* Adjustments for desktop and tablets */
+@media (min-width: 768px) {
+  /* Medium-sized screens (tablets) */
+  .main-heading {
+      font-size: 2.5rem;
+  }
+  .text-gray-300 {
+      font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Large screens (desktop) */
+  .main-heading {
+      font-size: 3.5rem;
+  }
+  .text-gray-300 {
+      font-size: 1.25rem;
+  }
+  .lg:w-96 {
+      width: 24rem;
+  }
+  .lg:mx-16 {
+      margin-left: 4rem;
+      margin-right: 4rem;
+  }
+  .lg:pl-10 {
+      padding-left: 2.5rem;
+  }
+}
