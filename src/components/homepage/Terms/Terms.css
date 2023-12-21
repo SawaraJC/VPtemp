@@ -1,0 +1,33 @@
+.terms-section {
+    background-color: #000;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .terms-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .terms-card {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #333;
+    padding: 20px;
+  }
+  
+  .terms-card h2 {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .terms-card {
+      padding: 15px;
+    }
+  }
+  
