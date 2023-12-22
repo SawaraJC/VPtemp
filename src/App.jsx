@@ -12,6 +12,7 @@ import Sponsors from './components/homepage/Sponsors/Sponsors'
 import Gallery from './components/homepage/Gallery/Gallery'
 import Reviews from './components/homepage/Reviews/Reviews'
 import Terms from './components/homepage/Terms/Terms'
+import Testimonials from './components/homepage/Reviews/Testimonials'
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
       <Sponsors></Sponsors>
       <Gallery></Gallery>
       <Reviews></Reviews>
+      <Testimonials></Testimonials>
       <Media></Media>
       <Terms></Terms>
       <FAQ></FAQ>

@@ -1,67 +1,67 @@
 /* FAQ Section Styles */
 .faq-section {
-    padding: 50px 20px;
-    background-color: black;
-    color: white;
-  }
-  
-  /* Main Heading */
-  .main-heading {
-    color: #b74b9b;
-    font-size: 2.5rem;
-  }
-  
-  /* FAQ List */
-  .faq-list {
-    display: grid;
-    gap: 20px;
-  }
-  
-  /* FAQ Item */
-  .faq-item {
-    background-color: #121212;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  /* Question Styles */
-  .question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .question span {
-    margin-right: 10px;
-  }
-  
-  /* Answer Styles */
-  .answer {
-    padding-top: 10px;
-    display: none;
-  }
-  
-  .faq-item.active .answer {
-    display: block;
-  }
-  
+  padding: 50px 20px;
+  background-color: black;
+  color: white;
+}
 
-  /* Add gradient border to FAQ items */
+/* Main Heading */
+.main-heading {
+  color: #b74b9b;
+  font-size: 2.5rem;
+}
+
+/* FAQ List */
+.faq-list {
+  display: grid;
+  gap: 20px;
+}
+
+/* FAQ Item */
 .faq-item {
-    background-color: #121212;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid transparent; /* Initially transparent border */
-    transition: border-color 0.3s ease; /* Adding transition effect for the border color */
-  }
-  
-  /* On hover, change the border color */
-  .faq-item:hover {
-    border-color: #b74b9b; /* Gradient color for the border */
-  }
-  
-  /* Rest of the existing styles remain unchanged */
-  /* ... */
-  
+  background-color: #121212;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #b74b9b; /* Set border color */
+  cursor: pointer;
+}
+
+/* Question Styles */
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.question span {
+  margin-right: 10px;
+}
+
+/* Answer Styles */
+.answer {
+  padding-top: 10px;
+}
+
+/* FAQ Item */
+.faq-item {
+  background-color: #121212;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid transparent; /* Remove the border-color */
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Optional: Add a subtle shadow */
+}
+
+/* White border for the FAQ item */
+.faq-item::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
