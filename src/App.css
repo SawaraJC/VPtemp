@@ -1,0 +1,8 @@
+
+/*To Stop the animation of sponsors and media partners on hover */
+.animate-marquee:hover {
+     animation-play-state: paused;
+  }
+.animate-marquee2:hover {
+     animation-play-state: paused;
+  }
