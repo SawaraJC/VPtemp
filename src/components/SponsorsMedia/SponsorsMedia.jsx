@@ -5,7 +5,7 @@ const SponsorCard = ({ img }) => {
     <>
       <span className="mx-8 ">
         <div className=" h-150 max-w-44 rounded overflow-hidden shadow-lg backdrop-blur-sm inline-block">
-          <img src={img} alt="TWJ Logo" />
+          <img src={img} alt="brand Logo" />
         </div>
       </span>
     </>
@@ -57,7 +57,7 @@ const SponsorsMedia = () => {
   return (
     <>
 
-      <div className="bg-black">
+      <div className="bg-black group">
       <h1 className="main-heading bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-4xl font-bold text-center py-8">
         Sponsors and Media Partners
       </h1>
