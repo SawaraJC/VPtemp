@@ -2,6 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
+import Hero from './components/homepage/Hero/Hero'
 import About from './components/homepage/About/About'
 import Media from './components/homepage/Media/media'
 import Contact from './components/homepage/Contact/Contact'
@@ -18,6 +19,7 @@ function App() {
   
   return (
     <div>
+      <Hero></Hero>
       <About></About>
       <Guest></Guest>
       {/* <Sponsors></Sponsors> */}
