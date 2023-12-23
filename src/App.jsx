@@ -24,7 +24,7 @@ function App() {
       <Guest></Guest>
       {/* <Sponsors></Sponsors> */}
       <Gallery></Gallery>
-      <SponsorsMedia/>
+      <SponsorsMedia />
       <Reviews></Reviews>
       <Testimonials></Testimonials>
       <Media></Media>
@@ -32,9 +32,8 @@ function App() {
       <FAQ></FAQ>
       <Contact></Contact>
       <Footer></Footer>
-
     </div>
-  )
+  );
 }
 
 export default App

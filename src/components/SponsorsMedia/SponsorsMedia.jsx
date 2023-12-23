@@ -5,7 +5,7 @@ const SponsorCard = ({ img }) => {
     <>
       <span className="mx-8 ">
         <div className=" h-150 max-w-44 rounded overflow-hidden shadow-lg backdrop-blur-sm inline-block">
-          <img src={img} alt="brand Logo" />
+          <img className="brightness-75" src={img} alt="brand Logo" />
         </div>
       </span>
     </>
