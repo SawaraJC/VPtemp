@@ -14,7 +14,7 @@ import Gallery from './components/homepage/Gallery/Gallery'
 import Reviews from './components/homepage/Reviews/Reviews'
 import Testimonials  from './components/homepage/Reviews/Testimonials'
 import Terms from './components/homepage/Terms/Terms'
-import SponsorsMedia from './components/SponsorsMedia/SponsorsMedia'
+import SponsorsMedia from './components/homepage/SponsorsMedia/SponsorsMedia'
 function App() {
   
   return (
@@ -28,7 +28,7 @@ function App() {
       <Reviews></Reviews>
       <Testimonials></Testimonials>
       <Media></Media>
-      <Terms></Terms>
+      {/* <Terms></Terms> */}
       <FAQ></FAQ>
       <Contact></Contact>
       <Footer></Footer>
