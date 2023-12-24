@@ -14,7 +14,7 @@ import Gallery from './components/homepage/Gallery/Gallery'
 import Reviews from './components/homepage/Reviews/Reviews'
 import Testimonials  from './components/homepage/Reviews/Testimonials'
 import Terms from './components/homepage/Terms/Terms'
-import SponsorsMedia from './components/SponsorsMedia/SponsorsMedia'
+import SponsorsMedia from './components/homepage/SponsorsMedia/SponsorsMedia'
 // import NavBar from './components/homepage/Navbar/Navbar'
 import Navbar from './components/homepage/Navbar/Navbar'
 
@@ -28,18 +28,18 @@ function App() {
       <About></About>
       <Guest></Guest>
       {/* <Sponsors></Sponsors> */}
-      {/* <Gallery></Gallery> */}
-      <SponsorsMedia/>
+      <Gallery></Gallery>
+      {/* <SponsorsMedia/> */}
+      <SponsorsMedia></SponsorsMedia>
       <Reviews></Reviews>
-      <Testimonials></Testimonials>
+      {/* <Testimonials></Testimonials> */}
       <Media></Media>
-      <Terms></Terms>
-      <FAQ></FAQ>
+      {/* <Terms></Terms> */}
+      {/* <FAQ></FAQ> */}
       <Contact></Contact>
       <Footer></Footer>
-
     </div>
-  )
+  );
 }
 
 export default App

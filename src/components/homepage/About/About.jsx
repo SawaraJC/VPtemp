@@ -5,17 +5,23 @@ import './About.css';
 const About = () => {
   return (
     <>
-      <div className="bg-black min-h-screen">
-        <h1 className="main-heading bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-3xl font-bold text-center py-8">
+      <div className="bg-black pb-12 min-h-screen">
+        <h1 className="main-heading pt-28 bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-3xl font-bold text-center py-8">
           About
         </h1>
 
         <div className=" flex flex-col md:flex-row items-center justify-center">
-          <div className="md:w-1/2 lg:w-1/2 lg:ml-auto">
-            <img
-              src="https://res.cloudinary.com/da5mmxnn3/image/upload/v1703051189/VP%2724/VP24_logo_oiho56.png"
-              className="w-full lg:w-96 mx-auto"
-            />
+          <div className="md:w-1/2 lg:w-1/2 lg:ml-32 w-1/6">
+            <iframe
+              width="530"
+              height="300"
+              src="https://www.youtube.com/embed/ZBqbC8Kdg60?autoplay=1&si=3xAuLcNd8Z_obVoJ"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              className='border border-1 rounded-lg -ml-28 w-[18rem] h-[15rem] mb-12 md:h-[16rem] md:w-[25rem] md:ml-12 lg:h-[16rem] lg:w-[30rem]'
+            ></iframe>
           </div>
 
           <div className=" lg:py-10">

@@ -10,19 +10,19 @@ const Footer = () => {
           {/* Grid layout and content */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             {/* Quick Links Section */}
-            <div className="text-center md:text-left lg:text-left xl:text-left transition duration-300">
+            <div className="text-center ml-2 md:text-left lg:text-left xl:text-left">
               <p className="font-bold mb-2 text-lg hover:underline" style={{ backgroundImage: 'linear-gradient(to right, #bb57a1, #6766b4)', WebkitBackgroundClip: 'text', color: 'transparent' }}>Quick Links</p>
               {/* ... (rest of the Quick Links section) */}
               <ul className="list-none">
-                <li className="mb-2"><a href="#" className="transition duration-300 transform hover:scale-105">Register</a></li>
-                <li className="mb-2"><a href="#" className="transition duration-300 transform hover:scale-105">Our Team</a></li>
-                <li className="mb-2"><a href="#" className="transition duration-300 transform hover:scale-105">Privacy Policy</a></li>
-                <li className="mb-2"><a href="#" className="transition duration-300 transform hover:scale-105">Terms and Conditions</a></li>
+                <li className="mb-2 hover:scale-105"><a href="#">Register</a></li>
+                <li className="mb-2 hover:scale-105"><a href="#">Our Team</a></li>
+                <li className="mb-2 hover:scale-105"><a href="#">Privacy Policy</a></li>
+                <li className="mb-2 hover:scale-105"><a href="#">Terms and Conditions</a></li>
               </ul>
             </div>
 
             {/* Follow Us Section */}
-            <div className="col-span-2 sm:col-span-1 transition ml-12 md:ml-1 lg:md-2 duration-300">
+            <div className="col-span-2 sm:col-span-1 transition ml-16 md:ml-1 lg:md-2 duration-300">
               <p className="font-bold mb-2 text-lg transform hover:underline" style={{ backgroundImage: 'linear-gradient(to right, #bb57a1, #6766b4)', WebkitBackgroundClip: 'text', color: 'transparent' }}>Follow us on</p>
               {/* ... (rest of the Follow Us section) */}
               <div className="flex space-x-4 -ml-4">
@@ -34,20 +34,20 @@ const Footer = () => {
             </div>
 
             {/* Contact Us Section */}
-            <div className="col-span-2 sm:col-span-1 ml-7">
+            <div className="col-span-2 sm:col-span-1 md:-ml-4 lg:-ml-4 -ml-8 md:text-left text-center">
               <p className="font-bold mb-2 text-lg hover:underline" style={{ backgroundImage: 'linear-gradient(to right, #bb57a1, #6766b4)', WebkitBackgroundClip: 'text', color: 'transparent' }}>Contact us</p>
               {/* ... (rest of the Contact Us section) */}
-              <p className='transition duration-300 transform hover:scale-105'>Email:<a href='mailto:edc@viit.ac.in'> edc@viit.ac.in</a></p>
-              <p className='transition duration-300 transform hover:scale-105'>Phone:<a href='tel:+918668351747'> +91 8668351747</a></p>
-              <p className='transition duration-300 transform hover:scale-105'>Address:<a href='https://maps.app.goo.gl/XJaQ351o7yRLJFrHA'> EDC HQ, VIIT, Pune</a></p>
+              <p className='hover:scale-105'>Email:<a href='mailto:edc@viit.ac.in'> edc@viit.ac.in</a></p>
+              <p className='hover:scale-105'>Phone:<a href='tel:+918668351747'> +91 8668351747</a></p>
+              <p className='hover:scale-105'>Address:<a href='https://maps.app.goo.gl/XJaQ351o7yRLJFrHA'> EDC HQ, VIIT, Pune</a></p>
             </div>
 
             {/* Download App Section */}
-            <div className="text-center transition duration-300 transform hover:scale-105">
+            <div className="text-center transition duration-300 transform">
               <p className="font-bold mb-2 text-lg" style={{ backgroundImage: 'linear-gradient(to right, #bb57a1, #6766b4)', WebkitBackgroundClip: 'text', color: 'transparent' }}>Download Our App</p>
               {/* ... (rest of the Download App section) */}
-              <a href="#" className="text-lg border-b border-white hover:border-opacity-50 hover:underline">
-                <span className="flex items-center">
+              <a href="#" className="text-lg border-b border-white hover:border-opacity-50 ">
+                <span className="flex items-center hover:scale-105">
                   <i className="fab fa-google-play pr-2"></i><h6>Download from Playstore</h6>
                 </span>
               </a>

@@ -6,3 +6,11 @@
 .animate-marquee2:hover {
      animation-play-state: paused;
   }
+body{
+   overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+ 

@@ -1,41 +1,3 @@
-// import React, { useState } from 'react'
-// // import Button from './Button';
-
-// const Navbar = () => {
-//     let Links =[
-//       {name:"HOME",link:"/"},
-//       {name:"SERVICE",link:"/"},
-//       {name:"ABOUT",link:"/"},
-//       {name:"BLOG'S",link:"/"},
-//       {name:"CONTACT",link:"/"},
-//     ];
-//     let [open,setOpen]=useState(false);
-//   return (
-//     <div className='shadow-md w-full fixed top-0 left-0'>
-//       <div className='md:flex items-center justify-between bg-black py-4 md:px-10 px-7'>
-//       <div className='font-bold text-2xl cursor-pointer flex items-center text-white'>
-//         Vishwapreneur
-//       </div>
-      
-//       <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
-//       <ion-icon name={open ? 'close':'menu'} className='text-white'></ion-icon>
-//       </div>
-
-//       <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-black md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ':'top-[-490px]'}`}>
-//         {
-//           Links.map((link)=>(
-//             <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7'>
-//               <a href={link.link} className='text-white hover:text-gray-400 duration-500'>{link.name}</a>
-//             </li>
-//           ))
-//         }
-//       </ul>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Navbar;
 
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -68,7 +30,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed">
+    <nav className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed z-50">
       <div>
         <h1 className="text-xl md:text-3xl lg:text-3xl ml-2">Vishwapreneur'24</h1>
       </div>
@@ -77,7 +39,7 @@ const Navbar = () => {
         {links.map(({ id, link }) => (
           <li
             key={id}
-            className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105 duration-200"
+            className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105"
           >
             <Link to={link} smooth duration={500}>
               {link}
@@ -112,8 +74,45 @@ const Navbar = () => {
           ))}
         </ul>
       )}
-    </div>
+    </nav>
   );
 };
 
 export default Navbar;
+
+// import React from 'react';
+
+// const Navbar = () => {
+//   return (
+//     <nav className="bg-black text-white fixed w-full top-0 z-50">
+//       <div className="container mx-auto flex justify-between items-center py-4">
+//         {/* Left side */}
+//         <div className="text-2xl font-bold">Vishwapreneur</div>
+
+//         {/* Right side - Navigation Panel */}
+//         <div className="hidden md:flex space-x-4">
+//           <a href="#about" className="hover:text-gray-300">
+//             About
+//           </a>
+//           <a href="#team" className="hover:text-gray-300">
+//             Our Team
+//           </a>
+//           <a href="#contact" className="hover:text-gray-300">
+//             Contact Us
+//           </a>
+//           <a href="#gallery" className="hover:text-gray-300">
+//             Gallery
+//           </a>
+//         </div>
+
+//         {/* Mobile menu button */}
+//         <div className="md:hidden">
+//           {/* You can use a mobile menu icon here */}
+//           <button className="text-white">&#9776;</button>
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
