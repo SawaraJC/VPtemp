@@ -5,7 +5,8 @@ import './About.css';
 const About = () => {
   return (
     <>
-      <div className="bg-black pb-12 min-h-screen">
+    <div id="About">
+    <div className="bg-black pb-12 min-h-screen">
         <h1 className="main-heading pt-28 bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-3xl font-bold text-center py-8">
           About
         </h1>
@@ -35,6 +36,9 @@ const About = () => {
           </div>
         </div>
       </div>
+</div>
+
+     
     </>
   );
 }

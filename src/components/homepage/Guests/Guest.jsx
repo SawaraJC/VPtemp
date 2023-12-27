@@ -6,7 +6,8 @@ import guest2Image from "../../../assets/image.png";
 const GuestCard = ({ img, name, whoIsHe }) => {
   return (
     <>
-      <div className="group mx-auto max-w-2xl transition duration-500 ease-in-out transform hover:brightness-125 inline-block px-5 cursor-pointer my-10">
+     <div id="Guests">
+     <div className="group mx-auto max-w-2xl transition duration-500 ease-in-out transform hover:brightness-125 inline-block px-5 cursor-pointer my-10">
         <div className="text-center">
           <div className="h-150 w-44 rounded-full overflow-hidden shadow-lg backdrop-blur-sm inline-block">
             <img
@@ -23,6 +24,8 @@ const GuestCard = ({ img, name, whoIsHe }) => {
           </div>
         </div>
       </div>
+     </div>
+     
     </>
   );
 };

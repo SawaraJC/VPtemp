@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
@@ -9,23 +8,23 @@ const Navbar = () => {
   const links = [
     {
       id: 1,
-      link: "home",
+      link: "Home",
     },
     {
       id: 2,
-      link: "about",
+      link: "About",
     },
     {
       id: 3,
-      link: "gallery",
+      link: "Guests",
     },
     {
       id: 4,
-      link: "our team",
+      link: "Gallery",
     },
     {
       id: 5,
-      link: "contact",
+      link: "Contact",
     },
   ];
 
@@ -39,7 +38,7 @@ const Navbar = () => {
         {links.map(({ id, link }) => (
           <li
             key={id}
-            className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105"
+            className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:text-white transition duration-300"
           >
             <Link to={link} smooth duration={500}>
               {link}
@@ -79,40 +78,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// import React from 'react';
-
-// const Navbar = () => {
-//   return (
-//     <nav className="bg-black text-white fixed w-full top-0 z-50">
-//       <div className="container mx-auto flex justify-between items-center py-4">
-//         {/* Left side */}
-//         <div className="text-2xl font-bold">Vishwapreneur</div>
-
-//         {/* Right side - Navigation Panel */}
-//         <div className="hidden md:flex space-x-4">
-//           <a href="#about" className="hover:text-gray-300">
-//             About
-//           </a>
-//           <a href="#team" className="hover:text-gray-300">
-//             Our Team
-//           </a>
-//           <a href="#contact" className="hover:text-gray-300">
-//             Contact Us
-//           </a>
-//           <a href="#gallery" className="hover:text-gray-300">
-//             Gallery
-//           </a>
-//         </div>
-
-//         {/* Mobile menu button */}
-//         <div className="md:hidden">
-//           {/* You can use a mobile menu icon here */}
-//           <button className="text-white">&#9776;</button>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;

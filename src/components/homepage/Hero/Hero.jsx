@@ -5,7 +5,8 @@ import { pointsInner, pointsOuter } from "./utils";
 
 const Hero = () => {
   return (
-    <div className="relative">
+    <div id="Home">
+      <div className="relative">
             <Canvas
         camera={{
           position: [0, -27.5, -25],
@@ -39,6 +40,8 @@ const Hero = () => {
         <img src="https://res.cloudinary.com/da5mmxnn3/image/upload/v1703221409/VP%2724/Vishwapreneur_24_nfl766.png" className="w-[20rem] md:w-[54rem] lg:w-[60rem] ml-36 lg:ml-52 mt-5 filter brightness-120 contrast-150"/>
       </div>
     </div>
+    </div>
+    
   );
 };
 
