@@ -20,8 +20,8 @@ function App() {
         <Navbar></Navbar>
         <Routes>
           <Route path="/*" element={<Landing />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signup2" element={<SignupPage/>} />
+          <Route path="/signupOld" element={<Signup />} />
+          <Route path="/signup" element={<SignupPage/>} />
           <Route path="/login" element={<Login />} />
           {/* Form Flow */}
           <Route path="/HaveYouPaid" element={<HaveYouPaid />} />

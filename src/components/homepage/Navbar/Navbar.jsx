@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-
+  const navigate = useNavigate();
   const links = [
     {
       id: 1,
@@ -26,12 +27,15 @@ const Navbar = () => {
       id: 5,
       link: "Contact",
     },
+    
   ];
 
   return (
     <nav className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed z-50">
       <div>
-        <h1 className="text-xl md:text-3xl lg:text-3xl ml-2">Vishwapreneur'24</h1>
+        <h1 className="text-xl md:text-3xl lg:text-3xl ml-2">
+          Vishwapreneur'24
+        </h1>
       </div>
 
       <ul className="hidden md:flex">
@@ -45,8 +49,17 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
-      </ul>
 
+        <li
+        key={links.length}
+          className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:text-white transition duration-300"
+          onClick={()=>{
+            navigate("/signup")}}
+        >
+          {" "}
+          Signup
+        </li>
+      </ul>
       <div
         onClick={() => setNav(!nav)}
         className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
