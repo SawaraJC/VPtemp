@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
     <div id="About">
-    <div className="bg-black pb-12 min-h-screen">
+    <div className="pb-12 min-h-screen bg-fixed bg-cover bg-center" style={{backgroundImage: 'url("https://res.cloudinary.com/da5mmxnn3/image/upload/v1703939672/VP%2724/earth-seen-from-space_o2egfs.webp")'}}>
         <h1 className="main-heading pt-28 bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-3xl font-bold text-center py-8">
           About
         </h1>
