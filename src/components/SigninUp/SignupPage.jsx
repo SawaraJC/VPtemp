@@ -1,6 +1,7 @@
 // SignupPage.js
 
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
   const [email, setEmail] = useState("");
@@ -12,19 +13,89 @@ const SignupPage = () => {
   const [showEmailSection, setShowEmailSection] = useState(true);
   const [showOtpSection, setShowOtpSection] = useState(false);
   const [showDetailsSection, setShowDetailsSection] = useState(false);
+  const [isOtpSent, setIsOtpSent] = useState(false);
+  const [logs, setlogs] = useState([]);
+  const navigate = useNavigate();
+  const addToLogs = (log) => {
+    setlogs((prevList) => [...prevList, log]);
+  };
+  const sendOtp = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/auth/sendOTP", {
+        method: "POST", // or 'GET' depending on your server's implementation
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
 
-  const handleSendOtp = () => {
+      if (response.ok) {
+        addToLogs("sent");
+        console.log(`OTP sent successfully to ${email}`);
+        setIsOtpSent(true);
+        return true;
+      } else {
+        const errorData = await response.json();
+        addToLogs(errorData.message);
+        console.error("Error sending OTP:", errorData.message);
+      }
+    } catch (error) {
+      addToLogs(error.message);
+      console.error("Error sending OTP:", error.message);
+    }
+    return false;
+  };
+  const verifyOtp = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/auth/verifyOTP", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, otp }),
+        });
+
+        if (response.ok) {
+          addToLogs(response);
+          console.log(response);
+          const Data = await response.json();
+          console.log(Data);
+          addToLogs(Data.token);
+          setShowOtpSection(false);
+          setShowDetailsSection(true);
+          console.log("reached here")
+          navigate("/");
+          return true
+        } else {
+          const errorData = await response.json();
+          addToLogs(errorData.message);
+          console.error("Error verifying OTP:", errorData.message);
+        }
+      } catch (error) {
+        addToLogs(error.message);
+        console.error("Error verifying OTP:", error.message);
+        // Optionally, update state or show an error message to the user
+      }
+      return false;
+    };
+  const handleSendOtp = async () => {
     // Implement logic to send OTP to the provided email
-    // For simplicity, this example sets the visibility of sections based on the user flow
+    const toProceed = await sendOtp();
+    if(!toProceed) return;
+    //Sets the visibility of sections based on the user flow
     setShowEmailSection(false);
     setShowOtpSection(true);
+    // navigate("/");
   };
 
-  const handleVerifyOtp = () => {
+  const handleVerifyOtp =async (e) => {
+    console.log(e)
+    e.preventDefault();
     // Implement logic to verify the OTP
-    // For simplicity, this example sets the visibility of sections based on the user flow
-    setShowOtpSection(false);
-    setShowDetailsSection(true);
+    navigate("/")
+    const toProceed = await verifyOtp();
+    console.log(toProceed)
+    if (!toProceed) return;
   };
 
   const handleSignupSubmit = (e) => {
@@ -34,7 +105,7 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-800">
+    <div className="min-h-screen flex items-center justify-center bg-gray-800 flex-col">
       <div className="bg-gray-900 p-8 rounded-md text-white w-96">
         {showEmailSection && (
           <div>
@@ -157,6 +228,12 @@ const SignupPage = () => {
           </form>
         )}
       </div>
+
+      <code className="text-white my-1">
+        {logs.map((log) => (
+          <>{log}</>
+        ))}
+      </code>
     </div>
   );
 };

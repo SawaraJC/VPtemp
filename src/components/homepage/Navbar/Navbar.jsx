@@ -54,10 +54,10 @@ const Navbar = () => {
         key={links.length}
           className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:text-white transition duration-300"
           onClick={()=>{
-            navigate("/signup")}}
+            navigate("/register")}}
         >
           {" "}
-          Signup
+          Register
         </li>
       </ul>
       <div

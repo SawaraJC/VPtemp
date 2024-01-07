@@ -10,8 +10,8 @@ import SignupPage from './components/SigninUp/SignupPage';
 import Footer from './components/homepage/Footer/Footer'
 import Navbar from './components/homepage/Navbar/Navbar'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-
+import RegistrationForm from './components/FormFlow/Registration';
+import RegistrationSuccess from './components/FormFlow/Success';
 function App() {
   
   return (
@@ -21,10 +21,15 @@ function App() {
         <Routes>
           <Route path="/*" element={<Landing />} />
           <Route path="/signupOld" element={<Signup />} />
-          <Route path="/signup" element={<SignupPage/>} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<Login />} />
           {/* Form Flow */}
           <Route path="/HaveYouPaid" element={<HaveYouPaid />} />
+          <Route path="/register" element={<RegistrationForm />} />
+          <Route
+            path="/RegistrationSuccess"
+            element={<RegistrationSuccess />}
+          />
         </Routes>
         <Footer></Footer>
       </Router>

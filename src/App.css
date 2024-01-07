@@ -14,3 +14,18 @@ body{
     display: none;
 }
  
+@keyframes successAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Update the success page styles in RegistrationSuccess.js */
+.max-w-md {
+  animation: successAnimation 0.4s ease-in-out;
+}
