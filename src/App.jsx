@@ -16,7 +16,6 @@ function App() {
   
   return (
     <div>
-      <Router>
         <Navbar></Navbar>
         <Routes>
           <Route path="/*" element={<Landing />} />
@@ -32,7 +31,6 @@ function App() {
           />
         </Routes>
         <Footer></Footer>
-      </Router>
     </div>
   );
 }
