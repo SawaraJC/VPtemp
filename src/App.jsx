@@ -9,7 +9,7 @@ import Signup from './components/SigninUp/Signup';
 import SignupPage from './components/SigninUp/SignupPage';
 import Footer from './components/homepage/Footer/Footer'
 import Navbar from './components/homepage/Navbar/Navbar'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import RegistrationForm from './components/FormFlow/Registration';
 import RegistrationSuccess from './components/FormFlow/Success';
 function App() {
