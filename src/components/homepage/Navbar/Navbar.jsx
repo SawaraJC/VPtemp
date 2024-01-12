@@ -9,33 +9,39 @@ const Navbar = () => {
   const links = [
     {
       id: 1,
-      link: "Home",
+      link: "",
     },
     {
       id: 2,
-      link: "About",
+      link: "about",
     },
     {
       id: 3,
-      link: "Guests",
+      link: "guests",
     },
     {
       id: 4,
-      link: "Gallery",
+      link: "gallery",
     },
     {
       id: 5,
-      link: "Contact",
+      link: "contact",
     },
     
   ];
 
   return (
     <nav className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed z-50">
-      <div>
-        <h1 className="text-xl md:text-3xl lg:text-3xl ml-2">
+      <div onClick={()=>{
+        navigate("/")
+      }}>
+        <img
+          src="https://res.cloudinary.com/da5mmxnn3/image/upload/v1703221409/VP%2724/Vishwapreneur_24_nfl766.png"
+          className="w-[10rem] md:w-[27rem] lg:w-[30rem] filter brightness-120 contrast-150"
+        />
+        {/* <h1 className="text-xl md:text-3xl lg:text-3xl ml-2">
           Vishwapreneur'24
-        </h1>
+        </h1> */}
       </div>
 
       <ul className="hidden md:flex">
@@ -43,18 +49,24 @@ const Navbar = () => {
           <li
             key={id}
             className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:text-white transition duration-300"
+            onClick={() => {
+              window.scrollTo(0, 0);
+              navigate("/" + link);
+            }}
           >
-            <Link to={link} smooth duration={500}>
+            {/* <Link to={link} smooth duration={500}>
               {link}
-            </Link>
+            </Link> */}
+            {link}
           </li>
         ))}
 
         <li
-        key={links.length}
+          key={links.length}
           className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:text-white transition duration-300"
-          onClick={()=>{
-            navigate("/register")}}
+          onClick={() => {
+            navigate("/register");
+          }}
         >
           {" "}
           Register

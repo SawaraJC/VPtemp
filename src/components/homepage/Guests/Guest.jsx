@@ -1,7 +1,5 @@
 import React from "react";
 import "./Guest.css";
-import guest1Image from "../../../assets/image.png"; // Import guest images accordingly
-import guest2Image from "../../../assets/image.png";
 
 const GuestCard = ({ img, name, whoIsHe }) => {
   return (

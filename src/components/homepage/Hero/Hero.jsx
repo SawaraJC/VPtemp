@@ -7,41 +7,45 @@ const Hero = () => {
   return (
     <div id="Home">
       <div className="relative">
-            <Canvas
-        camera={{
-          position: [0, -27.5, -25],
-          // fov:50,
-          zoom:3,
-          near:1,
-          far:100
-        }}
-        style={{ height: "100vh" }}
-        className="bg-black" // Add a gradient background
-      >
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          enableRotate={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <directionalLight intensity={1.5} position={[10, 10, 10]} />
-        <pointLight position={[-30, 0, -30]} power={10.0} />
-        <PointCircle />
+        <Canvas
+          camera={{
+            position: [0, -27.5, -25],
+            // fov:50,
+            zoom: 3,
+            near: 1,
+            far: 100,
+          }}
+          style={{ height: "100vh" }}
+          className="bg-black" // Add a gradient background
+        >
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            enableRotate={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <directionalLight intensity={1.5} position={[10, 10, 10]} />
+          <pointLight position={[-30, 0, -30]} power={10.0} />
+          <PointCircle />
+        </Canvas>
+        <div className="logoWrapper absolute flex flex-col items-center w-screen">
+          <div className="   ">
+            <img
+              src="https://res.cloudinary.com/da5mmxnn3/image/upload/v1703051189/VP%2724/VP24_logo_oiho56.png"
+              className="md:w-[50rem]   lg:w-[25rem]  filter brightness-110 contrast-150 w-[20rem]"
+            />
+          </div>
 
-      </Canvas>
-
-      <div className="lg:-translate-y-[33rem] lg:translate-x-[32rem] translate-x-6 -translate-y-[40rem] absolute z-10">
-          <img src='https://res.cloudinary.com/da5mmxnn3/image/upload/v1703051189/VP%2724/VP24_logo_oiho56.png' className="md:w-[50rem] md:ml-7 md:-translate-y-[30rem] lg:-ml-2 lg:-translate-y-[0rem] lg:w-[25rem] mx-auto filter brightness-110 contrast-150 w-[20rem]"/>
+          <div className=" ">
+            <img
+              src="https://res.cloudinary.com/da5mmxnn3/image/upload/v1703221409/VP%2724/Vishwapreneur_24_nfl766.png"
+              className="w-[20rem] md:w-[54rem] lg:w-[60rem] filter brightness-120 contrast-150"
+            />
+          </div>
         </div>
-
-      
-      <div className="absolute lg:-translate-y-40 -translate-y-[20rem] -translate-x-32 lg:translate-x-0">
-        <img src="https://res.cloudinary.com/da5mmxnn3/image/upload/v1703221409/VP%2724/Vishwapreneur_24_nfl766.png" className="w-[20rem] md:w-[54rem] lg:w-[60rem] ml-36 lg:ml-52 mt-5 filter brightness-120 contrast-150"/>
       </div>
     </div>
-    </div>
-    
   );
 };
 

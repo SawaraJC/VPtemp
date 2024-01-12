@@ -8,7 +8,7 @@ const Contact = () => {
       <p className="main-heading bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-3xl font-bold text-center py-8">Contact Us</p>
       <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
         <Card
-          title="Spekaing Opportunities"
+          title="Speaking Opportunities"
           subtitle="curation@vishwapreneur.in"
           href="mailto:curation@vishwapreneur.in"
           Icon={FaMicrophone}

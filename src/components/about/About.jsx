@@ -1,11 +1,10 @@
-import React from 'react'
-import './About.css';
-
+import React from "react";
+import "./About.css";
 
 const About = () => {
   return (
     <>
-      <div id="About mt-6 ">
+      <div id="About ">
         <div className="pb-12 min-h-screen bg-fixed bg-cover bg-center bgImage">
           <div className="aboutCard ">
             <h1 className="main-heading pt-28 bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-3xl font-bold text-center py-8">
@@ -42,6 +41,6 @@ const About = () => {
       </div>
     </>
   );
-}
+};
 
-export default About
+export default About;

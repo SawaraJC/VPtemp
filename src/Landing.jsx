@@ -23,11 +23,11 @@ function Landing() {
         </div>
       </div>
       <About className="h-[600px] bg-opacity-25 flex justify-center bg-fixed bg-cover bg-center" ></About>
-      <div className="bg-fixed bg-cover bg-center" style={{backgroundImage: 'url("https://cdn.pixabay.com/photo/2016/09/26/23/45/sky-1697359_1280.jpg")'}}>
+      {/* <div className="bg-fixed bg-cover bg-center" style={{backgroundImage: 'url("https://cdn.pixabay.com/photo/2016/09/26/23/45/sky-1697359_1280.jpg")'}}>
         <div className="h-[400px] bg-opacity-25 flex justify-center">
 
         </div>
-      </div>
+      </div> */}
       <Guest></Guest>
       {/* <Sponsors></Sponsors> */}
       <Gallery></Gallery>

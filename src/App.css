@@ -1,19 +1,18 @@
-
 /*To Stop the animation of sponsors and media partners on hover */
 .animate-marquee:hover {
-     animation-play-state: paused;
-  }
+  animation-play-state: paused;
+}
 .animate-marquee2:hover {
-     animation-play-state: paused;
-  }
-body{
-   overflow-x: hidden;
+  animation-play-state: paused;
+}
+body {
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
- 
+
 @keyframes successAnimation {
   0% {
     transform: scale(0);
@@ -28,4 +27,8 @@ body{
 /* Update the success page styles in RegistrationSuccess.js */
 .max-w-md {
   animation: successAnimation 0.4s ease-in-out;
+}
+.logoWrapper {
+  /* width:100vw; */
+  top: 7.5rem;
 }
