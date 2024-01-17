@@ -1,17 +1,21 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
 import './Footer.css'
+import image from '../../../assets/Footerimg.svg'
 
 const Footer = () => {
   return (
     <div
-      className="footer-section border-[1px] border-slate-300"
-      style={{
-        backgroundImage:
-          'url("https://res.cloudinary.com/da5mmxnn3/image/upload/v1703939672/VP%2724/earth-seen-from-space_o2egfs.webp")',
-      }}
+      className={`footer-section border-[1px] border-slate-300 overflow-hidden`} 
+
+      // style={{
+      //   backgroundImage:url("https://res.cloudinary.com/di40y80dw/image/upload/v1705057286/Parallax/Group_426_k1hcfe.svg"),
+      //     // 'url("https://res.cloudinary.com/da5mmxnn3/image/upload/v1703939672/VP%2724/earth-seen-from-space_o2egfs.webp")',
+      // }}
     >
-      <footer className="bg-black text-white py-12">
+      <footer className="bg-black text-white py-12 ">
+        <div className={`w-full h-full  relative   scale-[100%] m-15 bg-[url(${image})]  bg-cover bg-no-repeat`} style={{ backgroundImage: `url()`}}>
+
         <div className="container mx-auto flex flex-col items-center">
           {/* Grid layout and content */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -141,6 +145,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
+        </div>
         </div>
       </footer>
     </div>

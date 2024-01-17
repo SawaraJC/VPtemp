@@ -3,7 +3,7 @@ const MAX_RADIUS = 15;
 const DEPTH = 20;
 const LEFT_COLOR = "CACBCD";
 const RIGHT_COLOR = "CACBCD";
-const NUM_POINTS = 1100;
+const NUM_POINTS = 2100;
 
 const getGradientStop = (ratio) => {
     // For outer ring numbers potentially past max radius,

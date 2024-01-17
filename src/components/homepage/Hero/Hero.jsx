@@ -1,49 +1,220 @@
-import React, { useRef } from "react";
+// import React, { useRef, useLayoutEffect } from "react";
+// import { Canvas, useFrame } from "@react-three/fiber";
+// import { OrbitControls, Sphere } from "@react-three/drei";
+// import { pointsInner, pointsOuter } from "./utils";
+// import { useEffect, useState } from 'react';
+// import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+// import imagel from '../../../assets/GroupL.png'
+// import imager from '../../../assets/GroupR.png'
+// import vplog from '../../../assets/vp_hpe1ut.svg'
+
+// const Hero = () => {
+//   const [scrollY, setScrollY] = useState(0);
+//   const controlsLeft = useAnimation();
+//   const controlsRight = useAnimation();
+//   const controlsZoom = useAnimation();
+
+//   const handleScroll = () => {
+//     setScrollY(window.scrollY);
+//   };
+
+//   useLayoutEffect(() => {
+    // controlsLeft.start({
+    //   x: -scrollY * 10,
+    //   opacity: 1 - (scrollY / 100),
+    //   scale: (1 + scrollY / 100),
+    //   transition: { type: 'spring', stiffness: 20, damping: 10 }
+    // });
+    // controlsRight.start({
+    //   x: scrollY * 10,
+    //   opacity: 1 - (scrollY / 100),
+    //   scale: (1 + scrollY / 100),
+    //   transition: { type: 'spring', stiffness: 20, damping: 10 }
+    // });
+    // controlsZoom.start({
+    //   scale: 1 + (scrollY / 500),
+    //   opacity: 1 - (scrollY / 250),
+    //   transition: { type: 'spring', stiffness: 20, damping: 10, },
+    // });
+//     controlsLeft.start({
+//       x: -scrollY * 10,
+//       opacity: 1 - (scrollY / 100),
+//       scale: (1 + scrollY / 100),
+//       transition: { type: 'spring', stiffness: 30, damping: 50 }
+//     });
+//     controlsRight.start({
+//       x: scrollY * 10,
+//       opacity: 1 - (scrollY / 100),
+//       scale: (1 + scrollY / 100),
+//       transition: { type: 'spring', stiffness: 30, damping: 50 }
+//     });
+//     controlsZoom.start({
+//       scale: 1 + (scrollY / 500),
+//       opacity: 1 - (scrollY / 250),
+//       transition: { type: 'spring', stiffness: 30, damping: 50 },
+//     });
+//   }, [scrollY, controlsLeft, controlsRight, controlsZoom]);
+
+//   useEffect(() => {
+//     window.addEventListener('scroll', handleScroll);
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll);
+//     };
+//   }, []);
+
+//   return (
+//     <div id="Home">
+//       <div className="relative  w-screen h-screen flex items-center justify-center overflow-hidden place-content-center">
+//         <AnimatePresence>
+//         <Canvas
+//           camera={{
+//             position: [0, -27.5, -25],
+//             zoom: 3,
+//             near: 1,
+//             far: 100,
+//           }}
+//           style={{ height: "100vh" }}
+//           className="bg-black"
+//         >
+//           <OrbitControls
+//             enableZoom={false}
+//             enablePan={false}
+//             enableRotate={false}
+//             maxPolarAngle={Math.PI / 2}
+//             minPolarAngle={Math.PI / 2}
+//           />
+//           <directionalLight intensity={1.5} position={[10, 10, 10]} />
+//           <pointLight position={[-30, 0, -30]} power={10.0} />
+//           <PointCircle />
+//         </Canvas>
+
+//         <div className="absolute flex flex-row top-12 place-content-center">
+//           <motion.div
+//             className="z-100 w-1/2 h-full"
+//             animate={controlsLeft}
+//           >
+//             <img src={imagel} alt="" />
+//           </motion.div>
+
+//           <motion.div
+//             className="z-100 w-1/2 h-full "
+//             animate={controlsRight}
+//           >
+//             <img src={imager} alt="" />
+//           </motion.div>
+//         </div>
+
+//         <motion.div className='absolute z-10 top-[15rem]'>
+//           <motion.img src={vplog} animate={controlsZoom} className='h-96 opacity-100' alt="" />
+//         </motion.div>
+//       </AnimatePresence>
+//       </div>
+//     </div>
+//   );
+// };
+
+
+import React, { useRef, useLayoutEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { pointsInner, pointsOuter } from "./utils";
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+import imagel from '../../../assets/GroupL.png'
+import imager from '../../../assets/GroupR.png'
+import vplog from '../../../assets/vp_hpe1ut.svg'
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const controlsLeft = useAnimation();
+  const controlsRight = useAnimation();
+  const controlsZoom = useAnimation();
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useLayoutEffect(() => {
+    controlsLeft.start({
+      x: -scrollY * 10,
+      opacity: 1 - scrollY / 100,
+      scale: 1 + scrollY / 100,
+      transition: { type: 'spring', stiffness: 30, damping: 50 }
+    });
+    controlsRight.start({
+      x: scrollY * 10,
+      opacity: 1 - scrollY / 100,
+      scale: 1 + scrollY / 100,
+      transition: { type: 'spring', stiffness: 30, damping: 50 }
+    });
+    controlsZoom.start({
+      scale: 1 + scrollY / 500,
+      opacity: 1 - scrollY / 250,
+      transition: { type: 'spring', stiffness: 30, damping: 50 },
+    });
+  }, [scrollY, controlsLeft, controlsRight, controlsZoom]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div id="Home">
-      <div className="relative">
-        <Canvas
-          camera={{
-            position: [0, -27.5, -25],
-            // fov:50,
-            zoom: 3,
-            near: 1,
-            far: 100,
-          }}
-          style={{ height: "100vh" }}
-          className="bg-black" // Add a gradient background
-        >
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            enableRotate={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
-          <directionalLight intensity={1.5} position={[10, 10, 10]} />
-          <pointLight position={[-30, 0, -30]} power={10.0} />
-          <PointCircle />
-        </Canvas>
-        <div className="logoWrapper absolute flex flex-col items-center w-screen">
-          <div className="   ">
-            <img
-              src="https://res.cloudinary.com/da5mmxnn3/image/upload/v1703051189/VP%2724/VP24_logo_oiho56.png"
-              className="md:w-[50rem]   lg:w-[25rem]  filter brightness-110 contrast-150 w-[20rem]"
+      <div className="relative  w-screen h-screen flex items-center justify-center overflow-hidden place-content-center">
+        <AnimatePresence>
+          <Canvas
+            camera={{
+              position: [0, -27.5, -25],
+              zoom: 3,
+              near: 1,
+              far: 100,
+            }}
+            style={{ height: "100vh" }}
+            className="bg-black"
+          >
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              enableRotate={false}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
             />
+            <directionalLight intensity={1.5} position={[10, 10, 10]} />
+            <pointLight position={[-30, 0, -30]} power={10.0} />
+            <PointCircle />
+          </Canvas>
+
+          <div className="absolute top-12 left-0 w-full flex justify-center">
+            <motion.div
+              className="z-100 w-1/2 h-full relative "
+              initial={{ opacity: 0, x: -100 }}
+              animate={controlsLeft}
+              exit={{ opacity: 0, x: -100 }}
+            >
+              <img src={imagel} alt="" />
+            </motion.div>
+
+            <motion.div
+              className="z-100 w-1/2 h-full relative"
+              initial={{ opacity: 0, x: 100 }}
+              animate={controlsRight}
+              exit={{ opacity: 0, x: 100 }}
+            >
+              <img src={imager} alt="" />
+            </motion.div>
           </div>
 
-          <div className=" ">
-            <img
-              src="https://res.cloudinary.com/da5mmxnn3/image/upload/v1703221409/VP%2724/Vishwapreneur_24_nfl766.png"
-              className="w-[20rem] md:w-[54rem] lg:w-[60rem] filter brightness-120 contrast-150"
-            />
-          </div>
-        </div>
+          <motion.div className='absolute z-10 top-[15rem]  transform -translate-x-1/2'
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={controlsZoom}
+            exit={{ opacity: 0, scale: 0.5 }}
+          >
+            <motion.img src={vplog} className='h-96 opacity-100' alt="" />
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );
@@ -54,7 +225,8 @@ const PointCircle = () => {
 
   useFrame(({ clock }) => {
     if (ref.current?.rotation) {
-      ref.current.rotation.z = clock.getElapsedTime() * 0.05;
+      ref.current.rotation.y = clock.getElapsedTime() * 0.05;
+      ref.current.rotation.x = clock.getElapsedTime() * 0.05;
     }
   });
 
@@ -72,7 +244,7 @@ const PointCircle = () => {
 
 const Point = ({ position, color }) => {
   return (
-    <Sphere position={position} args={[0.1, 10, 10]}>
+    <Sphere position={position} args={[0.03, 10, 10]}>
       <meshStandardMaterial
         emissive={color}
         emissiveIntensity={0.5}

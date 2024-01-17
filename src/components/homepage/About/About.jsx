@@ -19,9 +19,9 @@ const About = () => {
                   height="300"
                   src="https://www.youtube.com/embed/ZBqbC8Kdg60?si=3xAuLcNd8Z_obVoJ"
                   title="YouTube video player"
-                  frameborder="0"
+                  // frameborder="0"
+                  allowFullScreen={true}
                   allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
                   className="border border-1 rounded-lg -ml-28 w-[18rem] h-[15rem] mb-12 md:h-[16rem] md:w-[25rem] md:ml-12 lg:h-[16rem] lg:w-[30rem]"
                 ></iframe>
               </div>

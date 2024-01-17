@@ -59,7 +59,7 @@ const SponsorsMedia = () => {
 
       <div className="bg-black group">
       <h1 className="main-heading bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-4xl font-bold text-center py-8">
-        Previous Sponsors and Media Partners
+        Previous Sponsors
       </h1>
         <div className="relative flex overflow-x-hidden ">
           <div className="py-12 animate-marquee whitespace-nowrap ">
@@ -70,6 +70,9 @@ const SponsorsMedia = () => {
             ))}
           </div>
         </div>
+        <h1 className="main-heading bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-4xl font-bold text-center py-8">
+         Media Partners
+      </h1>
         <div className="relative flex overflow-x-hidden bg-black">
           <div className="py-12 animate-marquee2 whitespace-nowrap ">
             {ListOfMediaPartners.map((img, index) => (

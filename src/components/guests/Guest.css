@@ -8,10 +8,10 @@
   background-position: center;
   background-color: #000000;
   opacity: 1;
-  background-image: radial-gradient(#320148 2px, transparent 2px),
+  /* background-image: radial-gradient(#320148 2px, transparent 2px),
     radial-gradient(#320148 2px, #000000 2px);
   background-size: 80px 80px;
-  background-position: 0 0, 40px 40px;
+  background-position: 0 0, 40px 40px; */
 }
 
 .guest-cards {

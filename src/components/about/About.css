@@ -16,12 +16,7 @@
 
   background-color: #000000;
   opacity: 1;
-  background-image: repeating-radial-gradient(
-      circle at 0 0,
-      transparent 0,
-      #000000 70px
-    ),
-    repeating-linear-gradient(#32014855, #320148);
+  /* background-image: llll-gradient(#32014855, #320148); */
 }
 /* Adjustments for desktop and tablets */
 @media (min-width: 768px) {
