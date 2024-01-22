@@ -35,7 +35,7 @@ const Reviews = () => {
     dots: true,
     arrows: false, // Hide arrows
     infinite: true,
-    speed: 500,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,

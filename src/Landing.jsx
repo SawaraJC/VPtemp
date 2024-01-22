@@ -16,7 +16,7 @@ import Terms from "./components/homepage/Terms/Terms";
 import SponsorsMedia from "./components/homepage/SponsorsMedia/SponsorsMedia";
 // import NavBar from './components/homepage/Navbar/Navbar'
 import Navbar from "./components/homepage/Navbar/Navbar";
-
+import Gallery3 from "./components/homepage/Gallery/Gallery3";
 
 function Landing() {
   return (
@@ -35,11 +35,11 @@ function Landing() {
       {/* <Guest></Guest> */}
       {/* <Sponsors></Sponsors> */}
       {/* <Gallery></Gallery> */}
-      
       <Hero></Hero>
-      <About ></About>
+      <About></About>
       <Guest2></Guest2>
       <Gallery2></Gallery2>
+      <Gallery3/>
       <SponsorsMedia></SponsorsMedia>
       {/* <Reviews2></Reviews2> */}
       <Reviews></Reviews>
@@ -48,7 +48,6 @@ function Landing() {
       {/* <Media></Media> */}
       {/* <Terms></Terms> */}
       {/* <FAQ></FAQ> */}
-
       <Contact></Contact>
     </div>
   );
