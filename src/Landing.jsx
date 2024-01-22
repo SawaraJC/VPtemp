@@ -38,7 +38,7 @@ function Landing() {
       <Hero></Hero>
       <About></About>
       <Guest2></Guest2>
-      <Gallery2></Gallery2>
+      {/* <Gallery2></Gallery2> */}
       <Gallery3/>
       <SponsorsMedia></SponsorsMedia>
       {/* <Reviews2></Reviews2> */}
