@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
@@ -13,19 +14,19 @@ const Navbar = () => {
     },
     {
       id: 2,
-      link: "about",
+      link: "#about",
     },
     {
       id: 3,
-      link: "guests",
+      link: "#guests",
     },
     {
       id: 4,
-      link: "gallery",
+      link: "#gallery",
     },
     {
       id: 5,
-      link: "contact",
+      link: "#contact",
     },
     
   ];
