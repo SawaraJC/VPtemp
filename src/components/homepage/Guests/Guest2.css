@@ -41,7 +41,7 @@ section{
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
     column-gap: 2.5em;
-    row-gap: 3.5em;
+    row-gap: 5em;
 }
 
 .card{
@@ -62,7 +62,8 @@ section{
     background: #fff;
     transform-style: preserve-3d;
     width: 350px;
-    height: fit-content;
+    /* height: fit-content; */
+    height: 30rem;
     box-shadow: 0 5px 25px rgb(0, 0 , 0 , .15);
     /* color: white; */
     transition: background-color 0.3s ease;
@@ -208,5 +209,6 @@ section{
         margin: 0 20px;
     }
 }
+
 
 

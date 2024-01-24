@@ -2,10 +2,55 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
+
+  const variants = {
+    open: {
+      clipPath: "circle(12000px at 50px 50px)",
+      transition: { 
+        type: "spring",
+        stiffness: 20,
+      },
+    },
+    closed: {
+      clipPath: "circle(30px at 50px 50px)",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+  };
+
+  const varients1 = {
+    open: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+    closed: {
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const itemVarients = {
+    open: {
+      y: 0,
+      opacity: 1,
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+    },
+  };
+
   const links = [
     {
       id: 1,
@@ -27,21 +72,16 @@ const Navbar = () => {
       id: 5,
       link: "contact",
     },
-    
   ];
 
   return (
     <nav className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed z-50">
-      <div onClick={()=>{
-        navigate("/")
-      }}>
+      <div onClick={() => navigate("/")}>
         <img
           src="https://res.cloudinary.com/da5mmxnn3/image/upload/v1703221409/VP%2724/Vishwapreneur_24_nfl766.png"
           className="w-[10rem] md:w-[27rem] lg:w-[30rem] filter brightness-120 contrast-150"
+          alt="Logo"
         />
-        {/* <h1 className="text-xl md:text-3xl lg:text-3xl ml-2">
-          Vishwapreneur'24
-        </h1> */}
       </div>
 
       <ul className="hidden md:flex">
@@ -54,9 +94,6 @@ const Navbar = () => {
               navigate("/" + link);
             }}
           >
-            {/* <Link to={link} smooth duration={500}>
-              {link}
-            </Link> */}
             {link}
           </li>
         ))}
@@ -68,7 +105,6 @@ const Navbar = () => {
             navigate("/register");
           }}
         >
-          {" "}
           Register
         </li>
       </ul>
@@ -80,23 +116,34 @@ const Navbar = () => {
       </div>
 
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
-          {links.map(({ id, link }) => (
-            <li
-              key={id}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl"
-            >
-              <Link
-                onClick={() => setNav(!nav)}
-                to={link}
-                smooth
-                duration={500}
+        <motion.ul
+          initial="closed"
+          animate={nav ? "open" : "closed"}
+          exit="closed"
+          variants={variants}
+          className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500"
+        >
+          <motion.div variants={varients1} className="my_links">
+            {links.map(({ id, link }) => (
+              <motion.li
+                key={id}
+                variants={itemVarients}
+                className="px-4 cursor-pointer capitalize py-6 text-4xl"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {link}
-              </Link>
-            </li>
-          ))}
-        </ul>
+                <Link
+                  onClick={() => setNav(!nav)}
+                  to={link}
+                  smooth
+                  duration={500}
+                >
+                  {link}
+                </Link>
+              </motion.li>
+            ))}
+          </motion.div>
+        </motion.ul>
       )}
     </nav>
   );
