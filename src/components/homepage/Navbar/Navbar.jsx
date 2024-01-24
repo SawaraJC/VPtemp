@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
@@ -58,19 +59,19 @@ const Navbar = () => {
     },
     {
       id: 2,
-      link: "about",
+      link: "#about",
     },
     {
       id: 3,
-      link: "guests",
+      link: "#guests",
     },
     {
       id: 4,
-      link: "gallery",
+      link: "#gallery",
     },
     {
       id: 5,
-      link: "contact",
+      link: "#contact",
     },
   ];
 

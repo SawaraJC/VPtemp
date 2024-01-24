@@ -17,8 +17,13 @@ import SponsorsMedia from "./components/homepage/SponsorsMedia/SponsorsMedia";
 // import NavBar from './components/homepage/Navbar/Navbar'
 import Navbar from "./components/homepage/Navbar/Navbar";
 import Gallery3 from "./components/homepage/Gallery/Gallery3";
+import { useEffect } from "react";
 
 function Landing() {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   return (
     <div>
       {/* <div className="bg-fixed bg-cover bg-center" style={{backgroundImage: 'url("https://res.cloudinary.com/da5mmxnn3/image/upload/v1703940876/VP%2724/2150528646_t4njjs.webp")'}}>
