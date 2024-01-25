@@ -59,19 +59,19 @@ const Navbar = () => {
     },
     {
       id: 2,
-      link: "#about",
+      link: "about",
     },
     {
       id: 3,
-      link: "#guests",
+      link: "guests",
     },
     {
       id: 4,
-      link: "#gallery",
+      link: "gallery",
     },
     {
       id: 5,
-      link: "#contact",
+      link: "contact",
     },
   ];
 
@@ -143,6 +143,20 @@ const Navbar = () => {
                 </Link>
               </motion.li>
             ))}
+            <motion.li
+              variants={itemVarients}
+              className="px-4 cursor-pointer capitalize py-6 text-4xl"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              key={links.length}
+              onClick={() => {
+
+                navigate("/register");
+                setNav(!nav); 
+              }}
+            >
+              Register
+            </motion.li>
           </motion.div>
         </motion.ul>
       )}

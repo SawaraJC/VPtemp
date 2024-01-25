@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import LoadingButton from "./LoadingButton";
+import { RocketAnimation } from "./RocketAnimation";
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
@@ -17,7 +19,8 @@ const RegistrationForm = () => {
     college: "",
     city: "",
   });
-
+  const [isloading, setIsLoading] = useState(false);
+  const [rocketUdd, setRocketUdd] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -49,14 +52,17 @@ const RegistrationForm = () => {
     else return 1;
   };
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
 
     // Validation logic
     let error = "";
     if (name === "fullName" && value.trim() === "") {
       error = "Full Name is required";
     } else if (name === "phoneNumber") {
-      if (!/^\d*$/.test(value)) {
+      if (value.slice(0, 3) == "+91") {
+        value = value.slice(3);
+        console.log(value);
+      } else if (!/^\d*$/.test(value)) {
         error = "Phone Number must contain only digits";
       } else if (value.length > 10) {
         error = "Phone Number cannot be more than 10 digits";
@@ -78,7 +84,6 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your validation logic here
 
     let errors = 0;
     for (const key in formData) {
@@ -87,17 +92,29 @@ const RegistrationForm = () => {
     }
     if (errors != 0) return;
     try {
-      const response = await fetch("https://api.vishwapreneur.in/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      setIsLoading(true);
+      fetch();
+      // const response = await fetch(
+      //   "https://api.vishwapreneur.in/register",
+
+      const response = await fetch(
+        "https://vp-backend-production.up.railway.app/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         },
-        body: JSON.stringify(formData),
-      });
+        { priority: "high" }
+      );
 
       if (response.ok) {
-        console.log("Registration successful");
-        navigate("/RegistrationSuccess");
+        setRocketUdd(true);
+        setTimeout(() => {
+          console.log("Registration successful");
+          navigate("/RegistrationSuccess");
+        }, 2000);
       } else {
         console.error("Registration failed");
       }
@@ -211,17 +228,26 @@ const RegistrationForm = () => {
               required
             />
           </div>
+          {/* <LoadingButton /> */}
           <div className="mt-7 text-3xl flex justify-center">
-            <button
-              type="submit"
-              className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600"
-            >
-              Register
-            </button>
+            {isloading ? (
+              <>
+                <LoadingButton />
+                {/* <RocketAnimation /> */}
+              </>
+            ) : (
+              <button
+                type="submit"
+                className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600"
+              >
+                Register
+              </button>
+            )}
           </div>
         </form>
       </div>
       <div className="h-24"></div>
+      {/* <RocketAnimation rocketUdd={rocketUdd} /> */}
     </div>
   );
 };
