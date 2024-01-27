@@ -22,7 +22,7 @@ function ScrollAnimation({ children }) {
 
   return (
     <motion.div
-    className="box"
+    className=""
     ref={ref}
     variants={boxVariant}
     initial="hidden"
