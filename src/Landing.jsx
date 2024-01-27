@@ -7,7 +7,7 @@ import FAQ from "./components/homepage/FAQ/FAQ";
 import Footer from "./components/homepage/Footer/Footer";
 // import Guest from "./components/homepage/Guests/Guest";
 import Guest2 from "./components/homepage/Guests/Guest2";
-import Gallery from "./components/homepage/Gallery/Gallery";
+// import Gallery from "./components/homepage/Gallery/Gallery";
 import Gallery2 from "./components/homepage/Gallery/Gallery2";
 import Reviews from "./components/homepage/Reviews/Reviews";
 // import Reviews2 from "./components/homepage/Reviews/Reviews2";
@@ -16,7 +16,7 @@ import Terms from "./components/homepage/Terms/Terms";
 import SponsorsMedia from "./components/homepage/SponsorsMedia/SponsorsMedia";
 // import NavBar from './components/homepage/Navbar/Navbar'
 import Navbar from "./components/homepage/Navbar/Navbar";
-import Gallery3 from "./components/homepage/Gallery/Gallery3";
+// import Gallery3 from "./components/homepage/Gallery/Gallery3";
 import { useEffect } from "react";
 
 function Landing() {
@@ -44,15 +44,15 @@ function Landing() {
       <About></About>
       <Guest2></Guest2>
       {/* <Gallery2></Gallery2> */}
-      <Gallery3/>
+      <Gallery2/>
       <SponsorsMedia></SponsorsMedia>
       {/* <Reviews2></Reviews2> */}
       <Reviews></Reviews>
-      {/* <Media2></Media2> */}
-      {/* <Testimonials></Testimonials> */}
+      {/* <Testimonia ls></Testimonia> */}
+      <Media2></Media2>
       {/* <Media></Media> */}
-      {/* <Terms></Terms> */}
-      {/* <FAQ></FAQ> */}
+      <Terms></Terms>
+      <FAQ></FAQ>
       <Contact></Contact>
     </div>
   );

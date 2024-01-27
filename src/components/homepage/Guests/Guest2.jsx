@@ -1,22 +1,24 @@
-import React, { useEffect, useRef } from "react";
-import "./Guest2.css";
+import React, { useEffect , useRef} from 'react';
+import './Guest2.css';
+import ScrollAnimation from '../../Animations/ScrollAnimation';
+// import ''
 
-const Review = () => {
+const Guest2 = () => {
   const cardContainerRef = useRef(null);
   useEffect(() => {
     const cardContainer = cardContainerRef.current;
-    const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll('.card');
 
     const observerOptions = {
       root: null,
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: 0.5, // Adjust this threshold based on when you want the animation to start
     };
 
     const cardObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate-card");
+          entry.target.classList.add('animate-card');
           observer.unobserve(entry.target);
         }
       });
@@ -45,47 +47,47 @@ const Review = () => {
       let y = (cardInnerWidth / 1.25 - cardYposition) / 25;
 
       card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-      const cardDescription = card.querySelector(".card-description");
+      const cardDescription = card.querySelector('.card-description');
 
       cardDescription.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
     };
 
     const handleMouseOver = (card) => {
-      const cardFigure = card.querySelector(".card-figure");
-      const cardName = card.querySelector(".card-name");
-      const cardDescription = card.querySelector(".card-description");
-      const cardMedia = card.querySelector(".card-media");
-      cardFigure.style.transform = "translate3d(0 , 0 , 150px)";
-      cardName.style.transform = "translate3d(0 , 0 , 180px)";
-      cardDescription.style.transform = "translate3d(0 , 0 , 170px)";
-      cardMedia.style.transform = "translate3d(0 , 0 , 140px)";
-      card.style.transition = "none";
+      const cardFigure = card.querySelector('.card-figure');
+      const cardName = card.querySelector('.card-name');
+      const cardDescription = card.querySelector('.card-description');
+      const cardMedia = card.querySelector('.card-media');
+      cardFigure.style.transform = 'translate3d(0 , 0 , 150px)';
+      cardName.style.transform = 'translate3d(0 , 0 , 180px)';
+      cardDescription.style.transform = 'translate3d(0 , 0 , 170px)';
+      cardMedia.style.transform = 'translate3d(0 , 0 , 140px)';
+      card.style.transition = 'none';
     };
 
     const handleMouseLeave = (card) => {
-      const cardFigure = card.querySelector(".card-figure");
-      const cardName = card.querySelector(".card-name");
-      const cardDescription = card.querySelector(".card-description");
-      const cardMedia = card.querySelector(".card-media");
-      cardFigure.style.transform = "translate3d(0 , 0 , 0)";
-      cardName.style.transform = "translate3d(0 , 0 , 0)";
-      cardDescription.style.transform = "translate3d(0 , 0 , 0)";
-      cardMedia.style.transform = "translate3d(0 , 0 , 0)";
-      card.style.transform = "rotateY(0deg) rotateX(0deg)";
-      card.style.transition = "transform .7s ease";
+      const cardFigure = card.querySelector('.card-figure');
+      const cardName = card.querySelector('.card-name');
+      const cardDescription = card.querySelector('.card-description');
+      const cardMedia = card.querySelector('.card-media');
+      cardFigure.style.transform = 'translate3d(0 , 0 , 0)';
+      cardName.style.transform = 'translate3d(0 , 0 , 0)';
+      cardDescription.style.transform = 'translate3d(0 , 0 , 0)';
+      cardMedia.style.transform = 'translate3d(0 , 0 , 0)';
+      card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      card.style.transition = 'transform .7s ease';
     };
 
-    const cards = document.querySelectorAll(".card-body");
+    const cards = document.querySelectorAll('.card-body');
 
     cards.forEach((card) => {
-      card.addEventListener("mousemove", handleMouseMove);
-      card.addEventListener("mouseover", () => handleMouseOver(card));
-      card.addEventListener("mouseleave", () => handleMouseLeave(card));
+      card.addEventListener('mousemove', handleMouseMove);
+      card.addEventListener('mouseover', () => handleMouseOver(card));
+      card.addEventListener('mouseleave', () => handleMouseLeave(card));
 
       return () => {
-        card.removeEventListener("mousemove", handleMouseMove);
-        card.removeEventListener("mouseover", () => handleMouseOver(card));
-        card.removeEventListener("mouseleave", () => handleMouseLeave(card));
+        card.removeEventListener('mousemove', handleMouseMove);
+        card.removeEventListener('mouseover', () => handleMouseOver(card));
+        card.removeEventListener('mouseleave', () => handleMouseLeave(card));
       };
     });
   }, []);
@@ -199,50 +201,43 @@ const Review = () => {
   ];
 
   return (
-    <div className="main-container bg-black">
-      <h1 className="main-heading pt-10 mb-20  bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-3xl font-bold text-center py-8">
-        Previous Speakers
+    <div className="main-container">
+      <h1 className="main-heading pt-28 bg-gradient-to-r from-[#b74b9b] to-white text-transparent bg-clip-text text-3xl font-bold text-center py-8">
+              Previous Guest
       </h1>
 
       <div className="card-container" ref={cardContainerRef}>
         {guests.map((guest, index) => (
           <div key={index} className="card">
-            <div className="card-body">
-              <div className="card-images">
-                {/* <img src={img} alt="card background" className="card-bg" /> */}
-                <img
-                  src={guest.img}
-                  alt="card figure"
-                  className="card-figure glass-bg-01"
-                  style={{ borderRadius: "50%" }}
-                />
-              </div>
-              <div className="card-info">
-                <h2 className="card-name">{guest.name}</h2>
-                <h4 className="card-name">{guest.whoIsHe}</h4>
-                {/* <p className="card-description" style={{ color: 'white' }}>{guest.content}</p> */}
+              <ScrollAnimation>
+              <div className="card-body">
+                <div className="card-images ">
+                  {/* <img src={img} alt="card background" className="card-bg" /> */}
+                  <img src={guest.img} alt="card figure" className="card-figure border-r-4 glass-bg-01" style={{ borderRadius: "50%" }} />
+                </div>
+                <div className="card-info">
+                  <h2 className="card-name">{guest.name}</h2>
+                  <p className="card-description" style={{ color: 'white' }}>{guest.content}</p>
 
-                <div className="card-media">
-                  <a href="#">
-                    {/* <i className="uil uil-facebook-f"></i> */}
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a>
-                  <a href="#">
-                    {/* <i className="uil uil-twitter"></i> */}
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a>
-                  <a href="#">
-                    {/* <i className="uil uil-instagram"></i> */}
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                  <div className="card-media">
+                    <a href="#">
+                      <i className="uil uil-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                      <i className="uil uil-twitter"></i>
+                    </a>
+                    <a href="#">
+                      <i className="uil uil-instagram"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
+          </ScrollAnimation>
             </div>
-          </div>
         ))}
       </div>
     </div>
   );
 };
 
-export default Review;
+export default Guest2;
